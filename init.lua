@@ -1,6 +1,4 @@
 --[[
-
-=====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
 
@@ -152,10 +150,10 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'rose-pine/neovim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'rose-pine'
     end,
   },
 
@@ -234,11 +232,15 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
+
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.cursorline = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -270,11 +272,17 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+vim.o.scrolloff = 8
+
+vim.g.netrw_liststyle = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_bufsettings = 'noma nomod nu relativenumber nobl nowrap ro'
 
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
+vim.keymap.set('i', 'kj', '<ESC>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
